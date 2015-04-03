@@ -1,0 +1,19 @@
+{
+  "name" : "Client",
+  "description": "",
+  "version": "0.0.1",
+  "main": "app.js",
+  "author": {
+        "name": "Vladislav Kovalskij",
+        "email": "vladislav.kovalskij@gmail.com"
+    },
+  "dependencies" : {
+    "express" : "3.x",
+    "mongodb" : "1.1.8",
+    "socket.io" : "0.9.10"
+  },
+  "engines" : {
+    "node" : "0.10.37",
+    "npm" : "1.4.28"
+  }
+}

@@ -1,0 +1,31 @@
+{
+    "name": "Shedule1",
+    "description": "",
+    "version": "0.0.1",
+    "main": "app_1.js",
+    "author": {
+        "name": "Vladislav Kovalskij",
+        "email": "vladislav.kovalskij@gmail.com"
+    },
+    "keywords": [],
+    "licenses": {
+        "type": "none"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/zmzm/Shedule.git"
+    },
+    "bugs": {
+        "url": "http://github.com/zmzm/Shedule/issues"
+    }
+
+  , "dependencies": {
+      "express": "~4.0.0",
+      "body-parser": "~1.0.0",
+      "debug": "~0.7.4",
+      "jade": "~1.3.0",
+      "jsdom":"3.1.2",
+      "request":"*",
+      "mongodb":"*"
+  }
+}
