@@ -1,14 +1,21 @@
-var Request = require('/home/vlad/NetBeansProjects/Shedule/Server/request/SheduleRequest');
-var Parse = require('/home/vlad/NetBeansProjects/Shedule/Server/parse/SheduleParse');
+var Request = require('../request/SheduleRequest');
+var Parse = require('../parse/SheduleParse');
+var DB = require('../shedule/DB');
 
 
-var getShedule = function(callback) {
+var getShedule = function() {
         Request.ScheduleRequest(function(err, data) {
-            if(!err){
-                callback(Parse.SheduleParse(data));
+            if(err){
+                throw new Exception(console.log(err));    
             }
             else
-                throw new Exception(err);
+                Parse.SheduleParse(data, function(err, parsedata) {
+                    if(err)
+                        throw new Exception(console.log(err));
+                    console.log(parsedata);
+                    DB.save(parsedata);    
+                });
+                               
         });
 };
 
