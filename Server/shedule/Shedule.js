@@ -3,7 +3,7 @@ var Parse = require('../parse/SheduleParse');
 var DB = require('../shedule/DB');
 
 
-var getShedule = function() {
+var getShedule = function(callback) {
         Request.ScheduleRequest(function(err, data) {
             if(err){
                 throw new Exception(console.log(err));    
@@ -12,7 +12,7 @@ var getShedule = function() {
                 Parse.SheduleParse(data, function(err, parsedata) {
                     if(err)
                         throw new Exception(console.log(err));
-                    //console.log(parsedata);
+                    callback(parsedata);
                     DB.save(parsedata);    
                 });
                                

@@ -26,14 +26,14 @@ app.get('/api', function (req, res) {
     res.send('API is running');
 });
 
-app.get('/api/shedule', function(req, res) {
+app.get('/api/schedule', function(req, res) {
     
     Shedule.getShedule(function(response) {
-    res.status(200);
-    res.send(response);
-    console.log('Run! Run! Run!')
-    });    
-    
+        res.header("Access-Control-Allow-Origin", "*");
+        res.header("Access-Control-Allow-Headers", "X-Requested-With");
+        res.status(200);
+        res.send(response);
+    });   
 });
 
 app.listen(3000, function(){

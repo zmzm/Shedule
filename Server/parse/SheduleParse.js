@@ -44,7 +44,6 @@ module.exports.SheduleParse = function(html, callback) {
 
 
             callback(err,schedule);
-            //console.log(schedule);
         }
     });
 };
