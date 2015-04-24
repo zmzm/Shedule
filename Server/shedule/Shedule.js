@@ -12,7 +12,7 @@ var getShedule = function() {
                 Parse.SheduleParse(data, function(err, parsedata) {
                     if(err)
                         throw new Exception(console.log(err));
-                    console.log(parsedata);
+                    //console.log(parsedata);
                     DB.save(parsedata);    
                 });
                                

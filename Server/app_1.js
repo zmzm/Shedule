@@ -1,10 +1,10 @@
-/*var express = require('express');
+var express = require('express');
 var path = require('path');
 var bodyParser = require('body-parser');
-var app = express();*/
+var app = express();
 var Shedule = require('./shedule/Shedule');
 
-/*app.use(bodyParser.json());
+app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
 app.use(express.static(path.join(__dirname, "public")));
 
@@ -28,19 +28,15 @@ app.get('/api', function (req, res) {
 
 app.get('/api/shedule', function(req, res) {
     
-    Shedule.getShedule(/*function(response) {
-    //res.status(200);
-    //res.send(response);
+    Shedule.getShedule(function(response) {
+    res.status(200);
+    res.send(response);
     console.log('Run! Run! Run!')
     });    
     
-});*/
-
-Shedule.getShedule(function() {
-    console.log('Run! Run! Run!');
 });
 
-/*app.listen(3000, function(){
+app.listen(3000, function(){
   console.log("Express server listening on port");
-});*/
+});
 
