@@ -1,51 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <title>Расписание</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">
+<html data-ng-app="ScheduleApp" manifest="cache.manifest">
+    <head>
+        <title>Schedule</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <link rel="stylesheet" type="text/css" href="style.min.css">
+    </head>
+    <body>
+        <header data-ng-include="'includes/header.html'"></header>
 
-    <link href="css/bootstrap.css" rel="stylesheet">
-    <style>
-        body {
-            padding-top: 60px;
-        }
-    </style>
-    <link href="css/bootstrap-responsive.css" rel="stylesheet">
-    <link href="css/styles.css" rel="stylesheet">
+        <div data-ng-view=""></div>
 
-    <script src="http://use.edgefonts.net/andika.js"></script>
-    <script src="http://use.edgefonts.net/arvo.js"></script>
-
-	<script type="text/javascript" src="socket.io/socket.io.js"></script>
-
-</head>
-
-<body>
-
-<div class="header"></div>
-
-<div class="container">
-
-    <div class="row-fluid">
-        <div id="content" class="span12>"></div>
-    </div>
-
-</div>
-
-
-<script src="lib/jquery-1.8.2.min.js"></script>
-<script src="lib/underscore-min.js"></script>
-<script src="lib/backbone-min.js"></script>
-<script src="lib/bootstrap.min.js"></script>
-
-<script src="js/utils.js"></script>
-<script src="js/models/models.js"></script>
-<script src="js/views/header.js"></script>
-<script src="js/views/home.js"></script>
-<script src="js/main.js"></script>
-
-</body>
+        <script type="text/javascript" src="build.min.js"></script>
+        </body>
 </html>

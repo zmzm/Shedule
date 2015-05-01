@@ -1,19 +1,24 @@
-var express = require('express'),
-    path = require('path'),
-    http = require('http'),
-    shedule = require('./routes/shedule');
+var app = angular.module('ScheduleApp', [
+  	'ngRoute',
+    'blockUI',
+  	'ui.bootstrap',
+    'app.services',
+  	'app.controllers',
+  	'app.main',
+    'LocalStorageModule'
+]);
 
-var app = express();
-
-app.configure(function () {
-    app.set('port', process.env.PORT || 3001);
-    app.use(express.logger('dev'));
-    app.use(express.bodyParser()),
-    app.use(express.static(path.join(__dirname, 'public')));
-});
-
-app.get('/shedule', shedule.findAll);
-
-http.createServer(app).listen(app.get('port'), function () {
-    console.log("Express server listening on port " + app.get('port'));
-});
+app.config(['$routeProvider', '$provide', function ($routeProvider, $provide) {
+    $routeProvider
+		.when('/', {
+		    redirectTo: '/Home'
+		})
+        .when('/Home', {
+            controller: 'HomeController',
+            templateUrl: 'public/views/home.html'
+        })
+        .when('/Schedule', {
+            controller: 'ScheduleController',
+            templateUrl: 'public/views/schedule.html'
+        });
+}]);

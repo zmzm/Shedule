@@ -2,6 +2,7 @@ var express = require('express');
 var path = require('path');
 var bodyParser = require('body-parser');
 var log = require('./log')(module);
+var fs = require('fs');
 var app = express();
 var Shedule = require('./shedule/Shedule');
 
@@ -12,9 +13,12 @@ app.use(app.router);
 
 app.use(function(req, res, next){
     res.status(404);
+    var file = 'public/images/404.jpg';
+    var img = fs.readFileSync(file);
     log.error('Not found URL: %s',req.url);
-    res.send({ error: 'Not found' });
-    return;
+    res.contentType = 'image/jpg';
+    res.end(img, 'binary');
+    //return;
 });
 
 app.use(function(err, req, res, next){
@@ -41,4 +45,3 @@ app.get('/api/schedule', function(req, res) {
 app.listen(3000, function(){
   log.info('Express server listening on port 3000');
 });
-
