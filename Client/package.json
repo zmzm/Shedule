@@ -1,42 +1,21 @@
 {
-    "name": "ScheduleClient",
-    "description": "",
-    "version": "0.0.1",
-    "main": "app.js",
-    "author": {
-        "name": "Vladislav Kovalskij",
-        "email": "vladislav.kovalskij@gmail.com"
-    },
-    
-    "devDependencies" : {
-        "grunt": "latest",
-        "grunt-contrib-jshint": "latest",
-        "grunt-contrib-concat": "latest",
-        "grunt-contrib-uglify": "latest",
-        "grunt-contrib-cssmin": "latest",
-        "grunt-contrib-watch": "latest",
-        "grunt-remove-logging": "latest",
-        "grunt-jscs": "latest"
-    },
-    
-    "keywords": [],
-    "licenses": {
-        "type": "none"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git://github.com/zmzm/Shedule.git"
-    },
-    "bugs": {
-        "url": "http://github.com/zmzm/Shedule/issues"
-    }
+  "name": "Client",
+  "private": true,
+  "version": "0.0.0",
+  "description": "A starter project for AngularJS",
+  "repository": "https://github.com/angular/angular-seed",
+  "license": "MIT",
+  "devDependencies": {
+    "http-server": "^0.6.1",
+    "shelljs": "^0.2.6"
+  },
+  "scripts": {
+    "prestart": "npm install",
+    "start": "http-server -a localhost -p 8000 -c-1",
 
-  , "dependencies": {
-      "express": "~3.3.x",
-      "body-parser": "~1.0.0",
-      "debug": "~0.7.4",
-      "winston": "~0.7.x",
-      "request":"*",
-      "mongodb":"*"
+    "preupdate-webdriver": "npm install",
+    "update-webdriver": "webdriver-manager update",
+
+    "update-index-async": "node -e \"require('shelljs/global'); sed('-i', /\\/\\/@@NG_LOADER_START@@[\\s\\S]*\\/\\/@@NG_LOADER_END@@/, '//@@NG_LOADER_START@@\\n' + sed(/sourceMappingURL=angular-loader.min.js.map/,'sourceMappingURL=bower_components/angular-loader/angular-loader.min.js.map','app/bower_components/angular-loader/angular-loader.min.js') + '\\n//@@NG_LOADER_END@@', 'app/index-async.html');\""
   }
 }

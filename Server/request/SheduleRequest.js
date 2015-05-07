@@ -1,6 +1,6 @@
 var request = require('request');
 
-var url = "http://raspisanie.grsu.by/TimeTable/PrintPage.aspx?arg0=960&arg1=3&arg2=2&arg3=4%20&arg4=1&date=20.04.2015%200:00:00";
+var url = "http://raspisanie.grsu.by/TimeTable/PrintPage.aspx?arg0=960&arg1=3&arg2=2&arg3=4%20&arg4=1&date=04.05.2015%200:00:00";
 
 
 module.exports.ScheduleRequest = function(callback) {
