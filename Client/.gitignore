@@ -1,6 +1,7 @@
 *.js~
 *.json~
 *.html~
+*.gitignore~
 
 # Logs
 logs
