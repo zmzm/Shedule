@@ -1,1 +1,48 @@
-<p>This is the partial for view 1.</p>
+<div class="container weather-cont">
+    <div class="jumbotron">
+        <div class="row-fluid">
+
+            <div class="row">
+                <div class="col-md-8 text-right  day">
+                    <label class="font-size-20">Day: {{scheduleData.day}}</label>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-8 text-right  date">
+                    <label class="font-size-20">Date: {{scheduleData.date| date:'dd.MM.yyyy'}}</label>
+                </div>
+            </div>
+
+            <div class="parts" ng-repeat="part in scheduleData.getRows">
+                <div class="col-md-6 col-xs-12" style="border: 4px double black; border-radius: 5px;">
+                    <div class="col-xs-12 col-md-12 time">
+                        <label class="font-size-60">
+                            Time: {{part.time}}
+                        </label>
+                    </div>
+                    <div class="col-xs-12 col-md-12 subgroup">
+                        <label class="font-size-20">
+                            Subgroup: {{part.subgroup}}
+                        </label>
+                    </div>
+                    <div class="col-xs-12 col-md-12 discipline">
+                        <label class="font-size-20">
+                            Discipline: {{part.discipline}}
+                        </label>
+                    </div>
+                    <div class="col-xs-12 col-md-12 staff">
+                        <label class="font-size-20">
+                            Staff: {{part.staff}}
+                        </label>
+                    </div>
+                    <div class="col-xs-12 col-md-12 auditory">
+                        <label class="font-size-40">
+                            Auditory: {{part.auditory}}
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
