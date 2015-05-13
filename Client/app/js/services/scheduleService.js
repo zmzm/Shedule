@@ -5,3 +5,5 @@ services.factory('scheduleService', [ function () {
         });
     }
 ]);
+
+var services = angular.module('scheduleClientApp.services', []);

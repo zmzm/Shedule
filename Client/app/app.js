@@ -5,8 +5,8 @@ angular.module('scheduleClientApp', [
   'ngRoute',
   'scheduleClientApp.schedule',
   'scheduleClientApp.settings',
-  //'scheduleClientApp.controller',
-  //'scheduleClientApp.services'
+  'scheduleClientApp.controller',
+  'scheduleClientApp.services'
 ]).
 config(['$routeProvider', function($routeProvider) {
   $routeProvider.otherwise({redirectTo: '/schedule'});
