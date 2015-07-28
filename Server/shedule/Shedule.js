@@ -13,7 +13,9 @@ var getShedule = function(callback) {
                     if(err)
                         throw new Exception(console.log(err));
                     callback(parsedata);
-                    DB.save(parsedata);    
+                    //console.log(parsedata[0].day);
+                    //console.log(parsedata[0].classes[0].discipline);
+                    //DB.save(parsedata);    
                 });
                                
         });

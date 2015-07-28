@@ -8,7 +8,7 @@ var Shedule = require('./shedule/Shedule');
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
-app.use(express.static(path.join(__dirname, "public")));
+//app.use(express.static(path.join(__dirname, "public")));
 app.use(app.router);
 
 app.use(function(req, res, next){

@@ -38,6 +38,7 @@
       "winston": "~0.7.x",
       "jsdom":"3.1.2",
       "request":"*",
+      "iconv-lite":"*",
       "mongodb":"*"
   }
 }

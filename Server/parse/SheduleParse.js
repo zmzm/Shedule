@@ -9,14 +9,18 @@ module.exports.SheduleParse = function(html, callback) {
         done: function (err, window) {
             var $ = window.$;
             var tr = $('tr');
-            var Index = 0;
-            var Index1 = 0;
+            var spannedIndex = -1;
+            var classesIndex = 0;
             var schedule = [];
             $.each(tr, function(index) {
-                if ( $(this).hasClass('row-spanned')) {
-                    schedule[++Index1] = {
+               if ( $(this).attr('class') == 'row row-spanned') {
+                    classesIndex = 0;
+                    schedule[++spannedIndex] = {
                         day:   $(this).find('.day').text(),
-                        date: $(this).find('.date').text(),
+                        date: $(this).find('.date').text()
+                    };
+                    schedule[spannedIndex].classes = [];
+                    schedule[spannedIndex].classes[classesIndex++] = {
                         time: $(this).find('.cell-time').text(),
                         subgroup: $(this).find('.cell-subgroup').text(),
                         discipline:$(this).find('.cell-discipline').text(),
@@ -25,14 +29,16 @@ module.exports.SheduleParse = function(html, callback) {
                     };
 
                 }
-                if ( $(this).hasClass('row-empty')) {
-                    schedule[++Index1] = {
+                if ( $(this).attr('class') == 'row row-empty') {
+                    classesIndex = 0;
+                    schedule[++spannedIndex] = {
                         day:   $(this).find('.day').text(),
                         date: $(this).find('.date').text()
-                    };                    
+                    };
+                    schedule[spannedIndex].classes = [];
                 }
-                if ($(this).attr('class') === 'row') {
-                    schedule[++Index1] = {
+                if ($(this).attr('class') == 'row') {
+                    schedule[spannedIndex].classes[classesIndex++] = {
                         time: $(this).find('.cell-time').text(),
                         subgroup: $(this).find('.cell-subgroup').text(),
                         discipline:$(this).find('.cell-discipline').text(),

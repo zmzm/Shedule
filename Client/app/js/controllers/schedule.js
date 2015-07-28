@@ -8,16 +8,10 @@ angular.module('scheduleClientApp.schedule', ['ngRoute'])
     controller: 'scheduleCtrl'
   });
 }])
-
-.controller('scheduleCtrl', ['$scope', 'scheduleService',
-    function($scope, scheduleService) {
-        $scope.getSchedule = function () {            
-            var scheduleAdapter = new ScheduleAdapter();            
-            scheduleService.get(function (response) {
-                        $scope.scheduleData = scheduleAdapter.request(response);
-                    }, function () {
-                    });
-            
-        }
-
+        .controller('scheduleCtrl', ['$scope','$http',
+    function($scope, $http) {
+        $scope.getDateTime = new Date();
+        $http.get('http://localhost:3000/api/schedule').success(function(schData) {  
+          $scope.schedules = schData;  
+     });
 }]);
