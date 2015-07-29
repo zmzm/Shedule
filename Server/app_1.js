@@ -8,7 +8,6 @@ var Shedule = require('./shedule/Shedule');
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
-//app.use(express.static(path.join(__dirname, "public")));
 app.use(app.router);
 
 app.use(function(req, res, next){
@@ -18,7 +17,6 @@ app.use(function(req, res, next){
     log.error('Not found URL: %s',req.url);
     res.contentType = 'image/jpg';
     res.end(img, 'binary');
-    //return;
 });
 
 app.use(function(err, req, res, next){
@@ -34,7 +32,7 @@ app.get('/api', function (req, res) {
 
 app.get('/api/schedule', function(req, res) {
     
-    Shedule.getShedule(function(response) {
+    Shedule.getShedule(req.query.date,function(response) {
         res.header("Access-Control-Allow-Origin", "*");
         res.header("Access-Control-Allow-Headers", "X-Requested-With");
         res.status(200);

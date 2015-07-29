@@ -1,12 +1,14 @@
 var request = require('request');
 
-var url = "http://raspisanie.grsu.by/TimeTable/PrintPage.aspx?arg0=960&arg1=3&arg2=2&arg3=4%20&arg4=1&date=11.05.2015%200:00:00";
 
+module.exports.ScheduleRequest = function(param, callback) {
+    //console.log(url);
+    //param = "2015-05-18";
+    //var date = param.replace(/(\d+)-(\d+)-(\d+)/, '$3.$2.$1');
+    //console.log(param);
 
-module.exports.ScheduleRequest = function(callback) {
-    console.log(url);
     request({
-        uri: url,
+        uri: "http://raspisanie.grsu.by/TimeTable/PrintPage.aspx?arg0=960&arg1=3&arg2=2&arg3=4%20&arg4=1&date="+param+"%200:00:00",
         method: "GET",
         timeout: 10000,
         encoding: "utf-8",

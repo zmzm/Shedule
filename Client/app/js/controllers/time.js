@@ -5,6 +5,3 @@ angular.module('scheduleClientApp.date', []).run(function($rootScope,$interval){
         $interval(function(){
     },1000);
 });
-                /*.controller('DateController', function ($scope) {
-            $scope.CurrentDate = new Date();
-        });*/
