@@ -2,14 +2,14 @@
     <div class="jumbotron"> 
         <h1>{{AssignedDate.now() | date:'dd-MM-yyyy HH:mm:ss'}}</h1>
     </div>
-            <div class="col-xs-12 col-md-3">
-            <form novalidate name="dateForm" class="css-form">
-                <input type="button" value="Получить расписание" class="btn btn-link btn-lg" ng-click="getDate(scheduleDate)"/>
-                <input type="date" ng-model="scheduleDate" name="calendar" class="btn btn-lg" required />
-            </form>
-        </div>
+    <div class="col-xs-12 col-md-3">
+        <form novalidate name="dateForm" class="css-form">
+            <input type="button" value="Получить расписание" class="btn btn-link btn-lg" ng-click="getDate(scheduleDate)"/>
+            <input type="date" ng-model="scheduleDate" name="calendar" class="btn btn-lg" required />
+        </form>
+    </div>
     <div class="row-fluid">
-            <div ng-controller="scheduleCtrl">
+        <div ng-controller="scheduleCtrl">
             <div class="parts" ng-repeat="part in schedules">
                 <div class="col-md-12 col-xs-12" style="border: 4px double black; border-radius: 5px;">
                     <div class="col-xs-8 col-md-8 day">
@@ -21,39 +21,39 @@
                         <label class="font-size-20">
                             Date: {{part.date}}
                         </label>
-                    <hr>    
+                        <hr>    
                     </div>
                     <div class="etc" ng-repeat="p in part.classes">
-                    <div class="col-xs-8 col-md-8 time">
-                        <label class="font-size-60">
-                            Time: {{p.time}}
-                        </label>
-                    </div>
-                    <div class="col-xs-8 col-md-8 subgroup">
-                        <label class="font-size-20">
-                            Subgroup: {{p.subgroup}}
-                        </label>
-                    </div>
-                    <div class="col-xs-8 col-md-8 discipline">
-                        <label class="font-size-20">
-                            Discipline: {{p.discipline}}
-                        </label>
-                    </div>
-                    <div class="col-xs-8 col-md-8 staff">
-                        <label class="font-size-20">
-                            Staff: {{p.staff}}
-                        </label>
-                    </div>
-                    <div class="col-xs-8 col-md-8 auditory">
-                        <label class="font-size-40">
-                            Auditory: {{p.auditory}}
-                        </label>
-                    <hr>
-                    </div>
-                    
+                        <div class="col-xs-8 col-md-8 time">
+                            <label class="font-size-60">
+                                Time: {{p.time}}
+                            </label>
                         </div>
+                        <div class="col-xs-8 col-md-8 subgroup">
+                            <label class="font-size-20">
+                                Subgroup: {{p.subgroup}}
+                            </label>
+                        </div>
+                        <div class="col-xs-8 col-md-8 discipline">
+                            <label class="font-size-20">
+                                Discipline: {{p.discipline}}
+                            </label>
+                        </div>
+                        <div class="col-xs-8 col-md-8 staff">
+                            <label class="font-size-20">
+                                Staff: {{p.staff}}
+                            </label>
+                        </div>
+                        <div class="col-xs-8 col-md-8 auditory">
+                            <label class="font-size-40">
+                                Auditory: {{p.auditory}}
+                            </label>
+                            <hr>
+                        </div>
+
+                    </div>
                 </div>
             </div>
         </div>
-        </div>
+    </div>
 </div>
