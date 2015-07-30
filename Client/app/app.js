@@ -1,6 +1,5 @@
 'use strict';
 
-// Declare app level module which depends on views, and components
 angular.module('scheduleClientApp', [
     'ngRoute',
     'scheduleClientApp.schedule',
@@ -8,5 +7,20 @@ angular.module('scheduleClientApp', [
     'scheduleClientApp.date'
 ])
         .config(['$routeProvider', function ($routeProvider) {
-                $routeProvider.otherwise({redirectTo: '/schedule'});
+                $routeProvider
+                        .when('/', {
+                            templateUrl: 'views/schedule.html',
+                            controller: 'scheduleCtrl'
+                        })
+                        .when('/schedule', {
+                            templateUrl: 'views/schedule.html',
+                            controller: 'scheduleCtrl'
+                        })
+                        .when('/settings', {
+                            templateUrl: 'views/settings.html',
+                            controller: 'settingsCtrl'
+                        })
+                        .otherwise({
+                            redirectTo: '/'
+                        });
             }]);
