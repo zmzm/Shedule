@@ -1,47 +1,44 @@
 {
-    "name": "ScheduleServer",
-    "description": "",
-    "version": "0.0.1",
-    "main": "app_1.js",
-    "author": {
-        "name": "Vladislav Kovalskij",
-        "email": "vladislav.kovalskij@gmail.com"
-    },
-    
-    "devDependencies" : {
-        "grunt": "latest",
-        "grunt-contrib-jshint": "latest",
-        "grunt-contrib-concat": "latest",
-        "grunt-contrib-uglify": "latest",
-        "grunt-contrib-cssmin": "latest",
-        "grunt-contrib-watch": "latest",
-        "grunt-remove-logging": "latest",
-        "grunt-jscs": "latest"
-    },
-    
-    "keywords": [],
-    "licenses": {
-        "type": "none"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git://github.com/zmzm/Shedule.git"
-    },
-    "bugs": {
-        "url": "http://github.com/zmzm/Shedule/issues"
-    }
-
-  , "dependencies": {
-      "express": "~3.3.x",
-      "body-parser": "~1.0.0",
-      "debug": "~0.7.4",
-      "winston": "~0.7.x",
-      "jsdom":"3.1.2",
-      "request":"*",
-      "iconv-lite":"*",
-      "mongodb":"*"
+  "name": "ScheduleServer",
+  "description": "",
+  "version": "0.0.1",
+  "main": "app.js",
+  "author": {
+    "name": "Vladislav Kovalskij",
+    "email": "vladislav.kovalskij@gmail.com"
   },
-"scripts": {
-    "start": "http-server -a localhost -p 3000 -c-1"
+  "dependencies": {
+    "jsdom": "*",
+    "express": "*",
+    "body-parser": "*",
+    "debug": "*",
+    "winston": "*",
+    "request": "*",
+    "iconv-lite": "*",
+    "mongodb": "*"
+  },
+  "keywords": [],
+  "licenses": {
+    "type": "MIT"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/zmzm/Shedule.git"
+  },
+  "bugs": {
+    "url": "http://github.com/zmzm/Shedule/issues"
+  },
+  "devDependencies": {
+    "grunt": "latest",
+    "grunt-contrib-jshint": "latest",
+    "grunt-contrib-concat": "latest",
+    "grunt-contrib-uglify": "latest",
+    "grunt-contrib-cssmin": "latest",
+    "grunt-contrib-watch": "latest",
+    "grunt-remove-logging": "latest",
+    "grunt-jscs": "latest"
+  },
+  "scripts": {
+    "start": "node app.js"
   }
 }
